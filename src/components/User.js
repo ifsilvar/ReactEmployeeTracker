@@ -2,20 +2,20 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios"
 
 
-const fetchData = () => {
+const FetchData = () => {
     const [profileName, setprofileName] = useState('');
     const [profileCell, setprofileCell] = useState('');
     const [profileImage, setprofileImage] = useState('');
     const [profileEmail, setprofileEmail] = useState('');
 
-    const profileData =async () => {
+    const profileData = async () => {
         try{
             const res = await axios.get('https://randomuser.me/api/')
             setprofileCell(res.data.results[0].cell)
             setprofileEmail(res.data.results[0].email)
-            setprofileImage(res.datae.results[0].image)
+            setprofileImage(res.data.results[0].picture.thumbnail)
             setprofileName(`${res.data.results[0].name.first} ${res.data.results[0].name.last}`)
-            consile.log(res)
+            console.log(res)
         }catch (err){
             console.log(err)
         }
@@ -27,7 +27,7 @@ const fetchData = () => {
 
     return <div>
         <div className='card'>
-            <img src={profileImage} style={{width: "100%"}}/>
+            <img src={profileImage} style={{width: "100%"}} alt="employeeImage"/>
             <h1>{profileName}</h1>
             <p className='title'>{profileEmail}</p>
             <p>{profileCell}</p>
@@ -36,4 +36,4 @@ const fetchData = () => {
     </div>
 }
 
-export default fetchData;
+export default FetchData;
