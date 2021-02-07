@@ -73,20 +73,25 @@ const FetchData = () => {
         {employeeData.filter((emp) => {
             return emp.name.last.startsWith(filterLastName);
         }).map((employee, index) => //need an index to use as a unique key when using .map
-                <div key={index} className='mt-3 col-md-3'>
-                    <div className="card ,t-3 align-items-center">
+                <div key={index} className='mt-3 col-md-4'>
+                    <div className="card text-center">
+                        <div style={{color: "white"}} className="card-header bg-dark">
+                            Employee
+                        </div>
                         <img className="card-img-top" src={employee.picture.large} style={{width: "100%"}} alt="employeeImage"/>
                         <div className="card-body">
-                            <h3 className='card-title'>{`${employee.name.first} ${employee.name.last}`}</h3>
-                            <p className='card-text'>{employee.email}</p>
-                            <p className='card-text'>{employee.phone}</p>
-                            {/* <button>contact</button> */}
+                            <h3 className="card-title">{`${employee.name.first} ${employee.name.last}`}</h3>
+                            <h5>{`${employee.email}`}</h5>
+                        </div>
+                        <div className="card-footer text-muted">
+                            {`${employee.phone}`}
                         </div>
                     </div>
                 </div>
         )}
         </div>
         </div>
+        <br></br>
     </>
 }
 
