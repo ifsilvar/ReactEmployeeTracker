@@ -23,49 +23,49 @@ const FetchData = () => {
     return <> 
     <div className="navbar navbar-dark bg-dark">
         <div className="container">
-        <h2 style={{color: "white"}}>Employee Tracker</h2>
-        {console.log(employeeData)}
-        <input placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
-        </input>
-        <button onClick={() => {
-            console.log('clickhere')
-            const data = employeeData.sort((emp1, emp2) => { 
-                return emp2.name.last.localeCompare(emp1.name.last)
-            })
-            console.log(data)
-            return setEmployeeData([...data])
-        }}>
-        Sort by Last Name
-        </button>
+            <h2 style={{color: "white"}}>Employee Tracker</h2>
+            {console.log(employeeData)}
+            <input placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
+            </input>
+            <button onClick={() => {
+                console.log('clickhere')
+                const data = employeeData.sort((emp1, emp2) => { 
+                    return emp2.name.last.localeCompare(emp1.name.last)
+                })
+                console.log(data)
+                return setEmployeeData([...data])
+            }}>
+            Sort by Last Name
+            </button>
 
-        <button onClick={() => {
-            console.log('clickhere')
-            const data = employeeData.sort((emp1, emp2) => { 
-                return (emp1.name.last.localeCompare(emp2.name.last))
-            })
+            <button onClick={() => {
+                console.log('clickhere')
+                const data = employeeData.sort((emp1, emp2) => { 
+                    return (emp1.name.last.localeCompare(emp2.name.last))
+                })
 
-            console.log(data)
-            return setEmployeeData([...data])
-        }}>
-        Sort by Last Name
-        </button>
+                console.log(data)
+                return setEmployeeData([...data])
+            }}>
+            Sort by Last Name
+            </button>
 
-        {/* <button onClick={() => {
-            console.log('clickhere')
-            function fn(reversed){
-                return () => {
-                    reversed = !reversed;
-                    return (emp1, emp2) => {
-                        return (emp1.name.last == emp2.name.last ? 0 : emp1.name.last < emp2.name.last ? -1 : 1) * (reversed ? -1 : 1)
+            {/* <button onClick={() => {
+                console.log('clickhere')
+                function fn(reversed){
+                    return () => {
+                        reversed = !reversed;
+                        return (emp1, emp2) => {
+                            return (emp1.name.last == emp2.name.last ? 0 : emp1.name.last < emp2.name.last ? -1 : 1) * (reversed ? -1 : 1)
+                        }
                     }
                 }
-            }
-            console.log(fn())
-            return setEmployeeData([...data])
-        }}>
-        Sort test
-        </button> */}
-            </div>
+                console.log(fn())
+                return setEmployeeData([...data])
+            }}>
+            Sort test
+            </button> */}
+                </div>
             </div>
         <div className="container">
         <div className="row">
