@@ -20,7 +20,10 @@ const FetchData = () => {
         profileData()
     }, [])
 
-    return <div className="container">
+    return <> 
+    <div className="navbar navbar-dark bg-dark">
+        <div className="container">
+        <h2 style={{color: "white"}}>Employee Tracker</h2>
         {console.log(employeeData)}
         <input placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
         </input>
@@ -62,19 +65,28 @@ const FetchData = () => {
         }}>
         Sort test
         </button> */}
-        
+            </div>
+            </div>
+        <div className="container">
+        <div className="row">
         {employeeData.filter((emp) => {
             return emp.name.last.startsWith(filterLastName);
         }).map((employee, index) => //need an index to use as a unique key when using .map
-                <div key={index} className='card'>
-                    <img src={employee.picture.large} style={{width: "10%"}} alt="employeeImage"/>
-                    <h1>{`${employee.name.first} ${employee.name.last}`}</h1>
-                    <p className='title'>{employee.email}</p>
-                    <p>{employee.phone}</p>
-                    {/* <button>contact</button> */}
+                <div key={index} className='mt-3 col-md-3'>
+                    <div className="card ,t-3 align-items-center">
+                        <img className="card-img-top" src={employee.picture.large} style={{width: "100%"}} alt="employeeImage"/>
+                        <div className="card-body">
+                            <h3 className='card-title'>{`${employee.name.first} ${employee.name.last}`}</h3>
+                            <p className='card-text'>{employee.email}</p>
+                            <p className='card-text'>{employee.phone}</p>
+                            {/* <button>contact</button> */}
+                        </div>
+                    </div>
                 </div>
         )}
-    </div>
+        </div>
+        </div>
+    </>
 }
 
 export default FetchData;
