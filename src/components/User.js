@@ -25,9 +25,10 @@ const FetchData = () => {
         <div className="container">
             <h2 style={{color: "white"}}>Employee Tracker</h2>
             {console.log(employeeData)}
-            <input placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
+            <input className="form-control mb-3" placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
             </input>
-            <button onClick={() => {
+
+            <button type="button" className="btn btn-outline-warning" onClick={() => {
                 console.log('clickhere')
                 const data = employeeData.sort((emp1, emp2) => { 
                     return emp2.name.last.localeCompare(emp1.name.last)
@@ -35,10 +36,10 @@ const FetchData = () => {
                 console.log(data)
                 return setEmployeeData([...data])
             }}>
-            Sort by Last Name
+            Sort by Last Name <i className="fa fa-arrow-down" aria-hidden="true"></i>
             </button>
 
-            <button onClick={() => {
+            <button type="button" className="btn btn-outline-warning" onClick={() => {
                 console.log('clickhere')
                 const data = employeeData.sort((emp1, emp2) => { 
                     return (emp1.name.last.localeCompare(emp2.name.last))
@@ -47,7 +48,7 @@ const FetchData = () => {
                 console.log(data)
                 return setEmployeeData([...data])
             }}>
-            Sort by Last Name
+            Sort by Last Name <i className="fa fa-arrow-up" aria-hidden="true"></i>
             </button>
 
             {/* <button onClick={() => {
