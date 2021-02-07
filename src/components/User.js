@@ -23,7 +23,7 @@ const FetchData = () => {
     return <> 
     <div className="navbar navbar-dark bg-dark">
         <div className="container">
-            <h2 style={{color: "white"}}>Employee Tracker</h2>
+            <h2 style={{color: "white"}}>Employee LookUp</h2>
             {console.log(employeeData)}
             <input className="form-control mb-3" placeholder="filter by last name" onChange={(event) => setFilterLastName(event.target.value)}>
             </input>
